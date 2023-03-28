@@ -18,5 +18,5 @@ const ArrowBtn = styled.button`
 `;
 
 export default function ArrowButton() {
-  return <ArrowBtn />;
+  return <ArrowBtn title="Link button" />;
 }

@@ -58,7 +58,10 @@ export default function ProductSectionItem({
           </SectionText>
         </ProductItemInnerText>
       </ProductItemInner>
-      <Link href={`/portfolio/${themeName.toLowerCase()}`}>
+      <Link
+        href={`/portfolio/${themeName.toLowerCase()}`}
+        title={`${themeName} design`}
+      >
         <ArrowButton />
       </Link>
     </ProductItem>

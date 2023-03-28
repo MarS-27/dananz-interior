@@ -49,7 +49,11 @@ export default function BurgerButton({
   handleOpenMenu,
 }: BurgerButton) {
   return (
-    <BurgerMenuButton buttonColor="blue" onClick={handleOpenMenu}>
+    <BurgerMenuButton
+      buttonColor="blue"
+      onClick={handleOpenMenu}
+      title="Open menu"
+    >
       <BurgerMenuLine openMenu={openMenu} />
       <BurgerMenuLine openMenu={openMenu} />
       <BurgerMenuLine openMenu={openMenu} />

@@ -21,5 +21,5 @@ const SubmitButton = styled.button`
 `;
 
 export default function SubmitEmailButton() {
-  return <SubmitButton type="submit" />;
+  return <SubmitButton type="submit" title="Submit email" />;
 }
