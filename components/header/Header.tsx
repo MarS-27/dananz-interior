@@ -27,7 +27,7 @@ const HeaderContent = styled(GridContent)`
 `;
 
 export default function Header() {
-  const prevPageY = useRef(window.scrollY);
+  const prevPageY = useRef(0);
   const [showHeader, setShowHeader] = useState(true);
 
   useEffect(() => {
