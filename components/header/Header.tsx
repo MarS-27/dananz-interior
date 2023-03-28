@@ -31,8 +31,6 @@ export default function Header() {
   const [showHeader, setShowHeader] = useState(true);
 
   useEffect(() => {
-    console.log(showHeader);
-
     const hideHeader = () => {
       setShowHeader(prevPageY.current >= window.scrollY);
       prevPageY.current = window.scrollY;
