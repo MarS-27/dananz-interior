@@ -44,7 +44,7 @@ const TitleText = styled(FontBold_4xl)`
 
 const StatisticOnHome = styled.div`
   position: absolute;
-  z-index: 999;
+  z-index: 99;
   top: 140px;
   right: 11%;
 

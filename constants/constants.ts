@@ -1,14 +1,15 @@
-import { IObjectTypes, ITeamMembers } from "@/models/constants";
+import { IObject, ITeamMembers } from "@/models/models";
 
-export const PAGES_NAMES: IObjectTypes = {
+export const MAIN_PAGES_NAMES: IObject = {
   home: "Home",
   about: "About Us",
   services: "Services",
   team: "Our Team",
+  portfolio: "Portfolio",
   contact: "Contact Us",
 };
 
-export const SOCIAL_LINKS: IObjectTypes = {
+export const SOCIAL_LINKS: IObject = {
   facebook: "https://www.facebook.com/",
   instagram: "https://www.instagram.com/",
   tiktok: "https://www.tiktok.com/",

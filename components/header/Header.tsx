@@ -1,12 +1,22 @@
 import { GridContainer, GridContent } from "@/styles/layout";
+import { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import Logo from "../logo/Logo";
 import NavMenu from "../navigation/NavMenu";
 
-const HeaderContainer = styled(GridContainer)`
+type ShowHeaderOnScroll = {
+  showHeader: boolean;
+};
+
+const HeaderContainer = styled(GridContainer)<ShowHeaderOnScroll>`
+  position: fixed;
+  top: ${({ showHeader }) => (showHeader ? "0" : "-114px")};
+  transition: top 0.3s;
+  background-color: ${({ theme }) => theme.grayscale.grayscale_lightray};
   align-content: center;
   width: 100%;
-  padding: 40px 0;
+  padding: 30px 0;
+  z-index: 999;
 `;
 
 const HeaderContent = styled(GridContent)`
@@ -17,11 +27,24 @@ const HeaderContent = styled(GridContent)`
 `;
 
 export default function Header() {
+  const prevPageY = useRef(window.scrollY);
+  const [showHeader, setShowHeader] = useState(true);
+
+  useEffect(() => {
+    const hideHeader = () => {
+      setShowHeader(prevPageY.current > window.scrollY);
+      prevPageY.current = window.scrollY;
+    };
+    window.addEventListener("scroll", hideHeader);
+
+    return () => window.removeEventListener("scroll", hideHeader);
+  }, [showHeader]);
+
   return (
-    <HeaderContainer as="header">
+    <HeaderContainer showHeader={showHeader} as="header">
       <HeaderContent as="div">
         <Logo />
-        <NavMenu />
+        <NavMenu showHeader={showHeader} />
       </HeaderContent>
     </HeaderContainer>
   );

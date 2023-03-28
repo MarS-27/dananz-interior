@@ -11,6 +11,7 @@ type Props = {
 
 const Main = styled(GridContainer)`
   padding: 50px 0 100px 0;
+  margin-top: 114px;
 
   @media (max-width: ${({ theme }) => theme.media.medium_width}) {
     padding: 0 0 50px 0;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Button } from "./MainButton";
 
-type BurgerButtonProps = {
+type BurgerButton = {
   openMenu: boolean;
   handleOpenMenu?: () => void;
 };
@@ -21,7 +21,7 @@ const BurgerMenuButton = styled(Button)`
   }
 `;
 
-const BurgerMenuLine = styled.hr<BurgerButtonProps>`
+const BurgerMenuLine = styled.hr<BurgerButton>`
   width: 100%;
   height: 4px;
   border-radius: 2px;
@@ -34,20 +34,20 @@ const BurgerMenuLine = styled.hr<BurgerButtonProps>`
   }
 
   :nth-of-type(2n) {
-    transform: ${(props) => (props.openMenu ? "translateX(-20px)" : "")};
-    background-color: ${(props) => (props.openMenu ? "transparent" : "")};
+    transform: ${({ openMenu }) => (openMenu ? "translateX(-20px)" : "")};
+    background-color: ${({ openMenu }) => (openMenu ? "transparent" : "")};
   }
 
   :last-of-type {
-    transform: ${(props) =>
-      props.openMenu ? "rotate(-45deg) translate(8px, -8px)" : ""};
+    transform: ${({ openMenu }) =>
+      openMenu ? "rotate(-45deg) translate(8px, -8px)" : ""};
   }
 `;
 
 export default function BurgerButton({
   openMenu,
   handleOpenMenu,
-}: BurgerButtonProps) {
+}: BurgerButton) {
   return (
     <BurgerMenuButton buttonColor="blue" onClick={handleOpenMenu}>
       <BurgerMenuLine openMenu={openMenu} />

@@ -1,12 +1,12 @@
 import { FontMedium_m } from "@/styles/typography";
 import styled from "styled-components";
 
-type ButtonConfigType = {
+type ButtonConfig = {
   buttonColor: "blue" | "white";
-  buttonWidth: "small" | "medium" | "large";
+  buttonWidth?: "small" | "medium" | "large";
 };
 
-type ButtonPropsType = ButtonConfigType & {
+type ButtonProps = ButtonConfig & {
   buttonName:
     | "Contact Us"
     | "Learn More"
@@ -15,7 +15,7 @@ type ButtonPropsType = ButtonConfigType & {
     | "See More";
 };
 
-export const Button = styled.button<ButtonConfigType>`
+export const Button = styled.button<ButtonConfig>`
   width: ${({ buttonWidth }) => {
     return buttonWidth === "small"
       ? "140px"
@@ -36,6 +36,11 @@ export const Button = styled.button<ButtonConfigType>`
   :hover {
     background-color: ${({ theme }) => theme.main_colors.blue_50};
     transition: ${({ theme }) => theme.transition};
+
+    & p {
+      color: ${({ theme }) => theme.grayscale.grayscale_50};
+      transition: ${({ theme }) => theme.transition};
+    }
   }
 
   & p {
@@ -44,11 +49,6 @@ export const Button = styled.button<ButtonConfigType>`
         ? theme.grayscale.grayscale_white
         : theme.grayscale.grayscale_50;
     }};
-
-    :hover {
-      color: ${({ theme }) => theme.grayscale.grayscale_50};
-      transition: ${({ theme }) => theme.transition};
-    }
   }
 `;
 
@@ -56,7 +56,7 @@ export default function MainButton({
   buttonName,
   buttonColor,
   buttonWidth,
-}: ButtonPropsType) {
+}: ButtonProps) {
   return (
     <Button
       type={buttonName === "Send Message" ? "submit" : "button"}

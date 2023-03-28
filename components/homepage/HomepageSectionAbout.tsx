@@ -2,7 +2,7 @@ import {
   PageSectionLargeMarginBottom,
   SectionTitleLargeMarginBottom,
 } from "@/styles/sections";
-import PortfolioCard from "../portfolio/PortfolioCard";
+import PortfolioCard from "../portfolio_page/PortfolioCard";
 import SectionName from "../section_name/SectionName";
 
 export default function HomepageAboutSection() {
@@ -13,7 +13,7 @@ export default function HomepageAboutSection() {
         “We&apos;re one of the best furniture agency. Prioritizing customers and
         making purchases easy are the hallmarks of our agency.”
       </SectionTitleLargeMarginBottom>
-      <PortfolioCard imageName="home_about_img" />
+      <PortfolioCard productName="home_about_img" />
     </PageSectionLargeMarginBottom>
   );
 }

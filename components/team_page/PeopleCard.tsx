@@ -19,7 +19,8 @@ const TeamMemberCard = styled.div<PeoplePhotoType>`
   height: 400px;
   padding: 15px;
   background-color: ${({ theme }) => theme.main_colors.blue_100};
-  background-image: url(${({ peoplePhoto }) => `/images/team/${peoplePhoto}.png`});
+  background-image: url(${({ peoplePhoto }) =>
+    `/images/team/${peoplePhoto}.webp`});
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;

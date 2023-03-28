@@ -1,7 +1,7 @@
-import GlobalStyle from '@/styles/globals'
-import { baseTheme } from '@/styles/theme'
-import type { AppProps } from 'next/app'
-import { ThemeProvider } from 'styled-components'
+import GlobalStyle from "@/styles/globals";
+import { baseTheme } from "@/styles/theme";
+import type { AppProps } from "next/app";
+import { ThemeProvider } from "styled-components";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -9,5 +9,5 @@ export default function App({ Component, pageProps }: AppProps) {
       <GlobalStyle />
       <Component {...pageProps} />
     </ThemeProvider>
-  ) 
+  );
 }

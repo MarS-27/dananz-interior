@@ -1,4 +1,4 @@
-import { PAGES_NAMES } from "@/constants/constants";
+import { MAIN_PAGES_NAMES } from "@/constants/constants";
 import { FontRegular_l } from "@/styles/typography";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -43,8 +43,8 @@ export default function NavMenuItem({ pageName }: MenuItemProps) {
           legacyBehavior
           passHref
         >
-          <LinkText as={"a"} onClick={newActivePage} activePage={activePage}>
-            {PAGES_NAMES[pageName]}
+          <LinkText as="a" onClick={newActivePage} activePage={activePage}>
+            {MAIN_PAGES_NAMES[pageName]}
           </LinkText>
         </Link>
       ) : (
