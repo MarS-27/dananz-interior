@@ -20,6 +20,8 @@ const TitleSection = styled(PageSection)<PageNameProps>`
 
     @media (max-width: ${({ theme }) => theme.media.medium_width}) {
       margin-bottom: 10px;
+      font-size: 32px;
+      line-height: 45px;
     }
   }
 

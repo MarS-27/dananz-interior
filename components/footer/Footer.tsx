@@ -31,6 +31,10 @@ const FooterContent = styled(GridContent)`
 
 const FooterContentOnTop = styled(FooterContent)`
   padding: 40px 0;
+
+  & a {
+    max-width: 140px;
+  }
 `;
 
 const FooterLogoContainer = styled.div`
